@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
 
-# Import your phishing detection function
 # Replace with your actual file and function name
 from phishing_detector import analyze_message
 
@@ -29,12 +28,11 @@ root.resizable(False, False)
 title = tk.Label(
     root,
     text="Phishing Awareness Detector",
-    font=("Arial", 18, "bold"),
+    font=("Arial", 18, "bold")
 )
 title.pack(pady=10)
 
-label = tk.Label(root, text="Enter Email / SMS Message")
-label.pack()
+tk.Label(root, text="Enter Email / SMS Message").pack()
 
 text_box = tk.Text(root, height=12, width=75)
 text_box.pack(pady=10)
