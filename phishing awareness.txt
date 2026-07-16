@@ -1,0 +1,91 @@
+import re
+
+# Suspicious phishing keywords
+SUSPICIOUS_KEYWORDS = [
+    "urgent", "verify", "password", "login", "click here",
+    "bank", "account", "update", "confirm", "security alert",
+    "limited time", "winner", "free", "gift", "otp",
+    "suspended", "reset", "payment", "claim", "prize"
+]
+
+def detect_urls(message):
+    """Find URLs in the message."""
+    url_pattern = r"(https?://\S+|www\.\S+)"
+    return re.findall(url_pattern, message)
+
+def analyze_message(message):
+    score = 0
+    red_flags = []
+
+    text = message.lower()
+
+    # Check suspicious keywords
+    for keyword in SUSPICIOUS_KEYWORDS:
+        if keyword in text:
+            score += 1
+            red_flags.append(f"Suspicious keyword found: '{keyword}'")
+
+    # Check URLs
+    urls = detect_urls(message)
+    if urls:
+        score += len(urls)
+        red_flags.append(f"Found {len(urls)} link(s): {', '.join(urls)}")
+
+    # Check excessive exclamation marks
+    if "!!!" in message:
+        score += 1
+        red_flags.append("Too many exclamation marks")
+
+    # Check ALL CAPS words
+    if re.search(r"\b[A-Z]{4,}\b", message):
+        score += 1
+        red_flags.append("Contains ALL CAPS words")
+
+    return score, red_flags
+
+
+def main():
+    print("=" * 50)
+    print("      PHISHING AWARENESS ANALYSIS TOOL")
+    print("=" * 50)
+
+    message = input("\nEnter Email or SMS Message:\n\n")
+
+    if not message.strip():
+        print("\nError: Empty message!")
+        return
+
+    score, flags = analyze_message(message)
+
+    print("\n" + "=" * 50)
+    print("ANALYSIS REPORT")
+    print("=" * 50)
+
+    if flags:
+        print("\nRed Flags Found:")
+        for i, flag in enumerate(flags, 1):
+            print(f"{i}. {flag}")
+    else:
+        print("\nNo red flags detected.")
+
+    print(f"\nRisk Score: {score}")
+
+    if score >= 4:
+        print("\nResult: HIGH RISK - Possible Phishing Attack")
+    elif score >= 2:
+        print("\nResult: MEDIUM RISK - Be Careful")
+    else:
+        print("\nResult: LOW RISK - Looks Safe")
+
+    print("\nSafety Tips:")
+    print("- Never click unknown links.")
+    print("- Verify sender's email address.")
+    print("- Don't share passwords or OTPs.")
+    print("- Enable Two-Factor Authentication (2FA).")
+    print("- Report suspicious emails.")
+
+    print("=" * 50)
+
+
+if __name__ == "__main__":
+    main()

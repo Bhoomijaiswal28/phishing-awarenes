@@ -1,0 +1,52 @@
+case 1: ==================================================
+      PHISHING AWARENESS ANALYSIS TOOL
+==================================================
+
+Enter Email or SMS Message:
+
+URGENT! Verify your bank account now at https://fakebank.com
+
+==================================================
+ANALYSIS REPORT
+==================================================
+
+Red Flags Found:
+1. Suspicious keyword found: 'urgent'
+2. Suspicious keyword found: 'verify'
+3. Suspicious keyword found: 'bank'
+4. Suspicious keyword found: 'account'
+5. Found 1 link(s): https://fakebank.com
+6. Contains ALL CAPS words
+
+Risk Score: 6
+
+Result: HIGH RISK - Possible Phishing Attack
+
+Safety Tips:
+- Never click unknown links.
+- Verify sender's email address.
+- Don't share passwords or OTPs.
+- Enable Two-Factor Authentication (2FA).
+- Report suspicious emails.
+==================================================
+case 2:Enter Email or SMS Message:
+
+login here for the information
+
+==================================================
+ANALYSIS REPORT
+==================================================
+
+Red Flags Found:
+1. Suspicious keyword found: 'login'
+
+Risk Score: 1
+
+Result: LOW RISK - Looks Safe
+
+Safety Tips:
+- Never click unknown links.
+- Verify sender's email address.
+- Don't share passwords or OTPs.
+- Enable Two-Factor Authentication (2FA).
+- Report suspicious emails.
