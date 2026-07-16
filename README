@@ -1,0 +1,135 @@
+🎣 Phishing Awareness Analysis
+
+DecodeLabs Cybersecurity Internship | Batch 2026 | Project 3
+
+📌 Overview
+
+Phishing Awareness Analysis is a Python-based cybersecurity project designed to identify phishing attempts in emails, SMS messages, and online communications. The program uses rule-based detection techniques to analyze suspicious content, calculate a risk score, classify the threat level, and recommend an appropriate security action.
+
+This project demonstrates how cybersecurity concepts can be implemented using Python without relying on external libraries.
+
+---
+
+🎯 Objectives
+
+- Detect phishing emails and messages.
+- Identify suspicious URLs and keywords.
+- Recognize common phishing techniques.
+- Generate a risk score based on detected indicators.
+- Classify messages as Safe, Suspicious, or Malicious.
+- Recommend appropriate defensive actions.
+
+---
+
+🛠 Features
+
+- Rule-based phishing detection.
+- URL and sender analysis.
+- Detection of urgency and social engineering tactics.
+- Risk scoring system.
+- Clear security recommendations.
+- Interactive command-line interface.
+
+---
+
+🧠 Detection Techniques
+
+The engine checks for several phishing indicators, including:
+
+- Suspicious sender domains
+- Fake login pages
+- Dangerous attachments
+- Password or OTP requests
+- Urgent language
+- QR-code phishing attempts
+- Callback scams
+- Deepfake or impersonation attempts
+- Lookalike domains
+- Sensitive information requests
+- Social engineering tactics
+
+---
+
+⚙️ Risk Classification
+
+Score| Classification| Action
+0| 🟢 Safe| No Action Required
+1–4| 🟡 Suspicious| Verify Before Responding
+5+| 🔴 Malicious| Block and Report
+
+---
+
+💻 Technologies Used
+
+- Python 3
+- Regular Expressions (re)
+- Standard Python Libraries
+
+---
+
+▶️ How to Run
+
+Clone the repository:
+
+git clone https://github.com/Bhoomijaiswal28/Phishing-Awareness-Analysis.git
+
+Move into the project folder:
+
+cd Phishing-Awareness-Analysis
+
+Run the program:
+
+python phishing_triage_engine.py
+
+---
+
+📂 Project Structure
+
+Phishing-Awareness-Analysis/
+│
+├── phishing_triage_engine.py
+├── README.md
+└── sample_messages.txt
+
+---
+
+📖 Learning Outcomes
+
+Through this project I learned:
+
+- Phishing detection techniques
+- Cybersecurity fundamentals
+- Rule-based threat analysis
+- Python programming
+- Secure coding practices
+
+---
+
+🚀 Future Improvements
+
+- GUI using Tkinter
+- Machine Learning-based detection
+- Email attachment scanning
+- URL reputation checking
+- Export reports as PDF
+- Database support
+
+---
+
+👩‍💻 Author
+
+Bhoomi Jaiswal
+
+B.Tech CSE (Cyber Security)
+
+Guru Gobind Singh Indraprastha University (GGSIPU)
+
+DecodeLabs Cybersecurity Intern | Batch 2026
+
+GitHub: https://github.com/Bhoomijaiswal28
+
+---
+
+📜 License
+
+This project is created for educational purposes as part of the DecodeLabs Cybersecurity Internship Program. Feel free to use and improve it for learning and portfolio development.
